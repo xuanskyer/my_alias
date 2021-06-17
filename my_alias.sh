@@ -24,9 +24,7 @@ alias vi='vim'
 alias l='ls -l'
 alias ll='ls -laF'
 # php
-
 # projects
-
 # git
 git config --global color.ui true
 git config --global alias.co checkout
