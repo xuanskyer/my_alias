@@ -15,7 +15,7 @@ echo  "\033[32m  load $path/$name \033[0m \r\n"
 function parse_git_branch_and_add_brackets {
      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
-current_ip=#
+current_ip="#"
 #current_ip=$(ifconfig en0 | grep "inet " | awk '{print $2}')
 
 function iterm2_print_user_vars() {
