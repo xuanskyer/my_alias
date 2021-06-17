@@ -9,9 +9,7 @@
 #   fi
 ##
 
-path=$(cd `dirname $0`; pwd)
-name=${0##*/}
-echo  "\033[32m  load $path/$name \033[0m \r\n"
+echo  "\033[32m  load ~/my_alias/my_alias.sh \033[0m \r\n"
 parse_git_branch_and_add_brackets() {
      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
