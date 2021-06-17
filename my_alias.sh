@@ -12,16 +12,11 @@
 path=$(cd `dirname $0`; pwd)
 name=${0##*/}
 echo  "\033[32m  load $path/$name \033[0m \r\n"
-function parse_git_branch_and_add_brackets() {
+function parse_git_branch_and_add_brackets {
      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
 current_ip="#"
 #current_ip=$(ifconfig en0 | grep "inet " | awk '{print $2}')
-
-function iterm2_print_user_vars() {
-  iterm2_set_user_var iterm2_current_ip $current_ip
- iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-}
 
 PS1='\[\e[1;32m\]\u\[\e[m\]@\[\e[1;32m\]\H(${current_ip}):\[\e[0m\e[1;32m\]\W\[\e[m\]$\[\e[1;32m\]$(parse_git_branch_and_add_brackets)\[\e[m\] '
 export CLICOLOR=1
