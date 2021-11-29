@@ -48,3 +48,7 @@ alias ggp='git rev-parse --abbrev-ref HEAD | xargs -t -I {} git push origin {}:p
 alias gitdebug='ga && gm "debug" && gg'
 alias 有内鬼，终止交易！='echo -e "\033[33m  git merge --abort  \033[0m \r\n"'
 alias "gitmergeabort"='echo -e "\033[33m 有内鬼，终止交易！\033[0m \r\n" && echo -e "\033[33m git merge --abort \033[0m \r\n" && git merge --abort'
+# go代码格式化
+alias ffgo='goimports  -w -l $(find . -type f -name '*.go'| grep -v "/vendor/")'
+
+alias h264_ffmpeg='-c:v libx264 output.mp4'
